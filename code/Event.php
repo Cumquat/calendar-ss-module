@@ -1,10 +1,10 @@
 <?php
 
 Class Event extends DataObject implements PermissionProvider {
-	static $db = array(
+	public static $db = array(
 		'Visibility' => 'Enum("Public,Private","Public")',
 		'Title' => 'Varchar(255)',
-		'Type' => 'Enum("Meeting,WorkBreak,DayEvent,Birthday","Meeting")',
+		'Type' => 'Enum("Unit Training,Ad-Hoc,Event,Meeting","Unit Training")',
 		'Location' => 'Varchar(255)',
 		'Address' => 'Text',
 		'Phone' => 'Varchar(20)',
@@ -18,9 +18,9 @@ Class Event extends DataObject implements PermissionProvider {
 		'URLSegment' => 'Varchar(255)',
 	);
 
-	static $default_sort = 'StartTime ASC, EndTime ASC';
+	public static $default_sort = 'StartTime ASC, EndTime ASC';
 
-	static $defaults = array(
+	public static $defaults = array(
 		'Visiblity' => 'Public',
 		'Status' => 'Active',
 	);
